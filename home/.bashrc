@@ -149,6 +149,9 @@ if type "gh" > /dev/null 2>&1; then
   eval "$(gh completion -s bash)"
 fi
 
+# homeshick
+source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
 
 # tmux autostart
 # if [ -n "$MY_TMUX_AUTOSTART" ] && [ "$MY_TMUX_AUTOSTART" -eq 1 ]; then

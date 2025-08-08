@@ -5,6 +5,7 @@ vim.opt.writebackup = true -- ファイルの書き込みに成功したとき�
 vim.opt.undofile = true -- undoファイル生成
 vim.opt.swapfile = true -- swapファイル生成
 vim.opt.updatetime = 300 -- この時間の間 (ミリ秒単位) 入力がなければスワップファイルがディスクに書き込まれる
-vim.cmd("set undodir=~/.local/state/nvim/undo//")
-vim.cmd("set directory=~/.local/state/nvim/swap//")
-vim.cmd("set backupdir=~/.local/state/nvim/backup//")
+vim.cmd("set undodir=~/.cache/nvim/tmp/undo")
+vim.cmd("set directory=~/.cache/nvim/tmp/swap")
+vim.cmd("set backupdir=~/.cache/nvim/tmp/backup")
+

@@ -19,37 +19,43 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup("plugins")
 
--- local status = pcall(require, "plugins")
--- if (not status) then return end
---
--- vim.api.nvim_create_autocmd("BufWritePost", {
---     pattern = { "plugins.lua" },
---     command = "PackerCompile"
--- })
---
--- -- require'nvim-treesitter.configs'.setup {
--- --     -- enable = true,
--- --     -- additional_vim_regex_highlighting = false
--- --     ensure_installed = 'all',
--- --     highlight = {
--- --         enable = true,
--- --
--- --         -- Treesitter + tcomment の組み合わせで vue ファイルでのコメントアウトがうまく動くまで必要
--- --         -- disable = { "vue" }
--- --     },
--- -- }
---
-
 require('basic')
 require('backup')
 require('indent')
 require('color')
 require('editor')
-require('backup')
 require('diff')
 require('buffer')
 require('statusline')
 require('search')
+-- こっからした未確認ちゃんと棚卸する
 require('window')
 require('mapping')
 require('extension')
+
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "typescript",
+--   callback = function()
+--     local git_root = vim.fn.system("git rev-parse --show-toplevel"):gsub("\n", "")
+--     if vim.v.shell_error == 0 and git_root ~= "" then
+--       vim.b.quickrun_config = {
+--         exec = "ts-node --project " .. git_root .. "/tsconfig.json %s"
+--       }
+--     end
+--   end
+-- })
+--
+-- vim.api.nvim_create_autocmd("FileType", {
+--   group = tsGroup,
+--   pattern = { "typescript", "javascript" },
+--   callback = function()
+--     local git_root = vim.fn.system("git rev-parse --show-toplevel"):gsub("\n", "")
+--     if vim.v.shell_error == 0 and git_root ~= "" then
+--       vim.b.quickrun_config = {
+--         exec = "ts-node --project " .. git_root .. "/tsconfig.json %s"
+--       }
+--     else
+--       vim.notify("Git root not found for JS/TS file", vim.log.levels.WARN)
+--     end
+--   end
+-- })

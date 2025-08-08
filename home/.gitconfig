@@ -1,33 +1,33 @@
 [user]
-    name = Yuki Sumiyoshi
-    email = smysyuk@gmail.com
+  name = Yuki Sumiyoshi
+  email = smysyuk@gmail.com
 [core]
-    editor = nvim
-    ; autocrlf = true
+  editor = nvim
+  ; autocrlf = true
 [color]
-    ui = true
+  ui = true
 [credential]
-    helper = store
-    UseHttpPath = true
+  helper = store
+  UseHttpPath = true
 [diff]
-    tool = vimdiff
+  tool = vimdiff
 [difftool "vimdiff"]
-    cmd = "nvim -R -d -c \"wincmd l\" -d \"$LOCAL\" \"$REMOTE\""
+  cmd = "nvim -R -d -c \"wincmd l\" -d \"$LOCAL\" \"$REMOTE\""
 [merge]
-    tool = vimdiff
+  tool = vimdiff
 [mergetool]
-    keepBackup = false
+  keepBackup = false
 [mergetool "vimdiff"]
-    cmd = "nvim -d -c \"4wincmd w | wincmd J\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"  \"$MERGED\""
-    # cmd = "nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'"
+  cmd = "nvim -d -c \"4wincmd w | wincmd J\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"  \"$MERGED\""
+  ; cmd = "nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'"
 [rerere]
-    enable = true
+  enable = true
 [cola]
-    spellcheck = false
+  spellcheck = false
 [filter "lfs"]
-    required = true
-    clean = git-lfs clean -- %f
-    smudge = git-lfs smudge -- %f
-    process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
 [includeIf "gitdir:~/organization/"]
-    path = ~/.organization.gitconfig
+  path = ~/.organization.gitconfig

@@ -1,19 +1,17 @@
 return {
-  "nvimtools/none-ls.nvim",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvimtools/none-ls-extras.nvim",
-  },
-  config = function()
+  "jose-elias-alvarez/null-ls.nvim",
+  dependencies = { "nvim-lua/plenary.nvim" },
+  opts = {},
+  config = function(_, opts)
     local null_ls = require "null-ls"
     null_ls.setup({
       sources = {
-        require("none-ls.diagnostics.eslint_d").with({
+        null_ls.builtins.diagnostics.eslint_d.with({
           condition = function(utils)
             return utils.root_has_file({ "node_modules/.bin/eslint" })
           end
         }),
-        require("none-ls.formatting.eslint_d").with({
+        null_ls.builtins.formatting.eslint_d.with({
           condition = function(utils)
             return utils.root_has_file({ "node_modules/.bin/eslint" })
           end

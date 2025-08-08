@@ -18,16 +18,16 @@ null_ls.setup({
             end
         }),
     },
-    on_attach = function(client, bufnr)
-        vim.keymap.set("n", "<leader>q", function ()
-            vim.lsp.buf.format({
-                -- bufnr = bufnr,
-                timeout_ms = 5000,
-                filter = function(client)
-                    return client.name == "null-ls"
-                end
-            })
-        end)
-    end,
+    -- on_attach = function(client, bufnr)
+    --     vim.keymap.set("n", "<leader>q", function ()
+    --         vim.lsp.buf.format({
+    --             -- bufnr = bufnr,
+    --             timeout_ms = 5000,
+    --             filter = function(client)
+    --                 return client.name == "null-ls"
+    --             end
+    --         })
+    --     end)
+    -- end,
     debug = false,
 })

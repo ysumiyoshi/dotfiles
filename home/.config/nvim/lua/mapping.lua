@@ -8,11 +8,18 @@ local lsp_attach_callback = function(args)
 
     keymap("n", "<leader>q", function ()
         vim.lsp.buf.format({
-            -- bufnr = bufnr,
             timeout_ms = 5000,
             filter = function(client)
-                return client.name == "null-ls"
-            end
+                -- 現在のバッファの言語を取得
+                local filetype = vim.bo.filetype
+                -- JavaScript または TypeScript の場合のみ 'null-ls' を使用
+                if filetype == "javascript" or filetype == "typescript" or filetype == "vue" then
+                    return client.name == "null-ls"
+                else
+                    -- それ以外の場合は 'null-ls' を使わない
+                    return client.name ~= "null-ls"
+                end
+            end, async = true
         })
     end, keyOpts)
 
@@ -94,7 +101,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
     callback = lsp_attach_callback
 })
 
-keymap("n", "<Leader>fs", telescope_builtin.lsp_dynamic_workspace_symbols)
+keymap("n", "<Leader>fs", telescope_builtin.lsp_references)
+-- keymap("n", "<Leader>fs", telescope_builtin.lsp_dynamic_workspace_symbols)
 keymap('n', '<Leader>ff', telescope_builtin.find_files)
 keymap('n', '<Leader>fg', telescope_builtin.live_grep)
 keymap('n', '<Leader>fb', telescope_builtin.buffers)
