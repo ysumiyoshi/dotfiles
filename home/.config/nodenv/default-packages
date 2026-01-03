@@ -8,3 +8,4 @@ eslint_d
 ts-node
 typescript
 ember-cli
+typescript-language-server

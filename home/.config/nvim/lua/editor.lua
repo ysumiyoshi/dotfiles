@@ -2,9 +2,6 @@ vim.opt.backspace = { "indent", "eol", "start" } -- バックスペースで何�
 vim.opt.wrap = true -- 長すぎる行を折り返す
 vim.opt.showmatch = true -- 括弧の対応をハイライト
 
--- fileformats=unix,dos,mac
--- vim.opt.fileformat="dos"
--- vim.opt.fileformats={ "unix", "dos", "mac" }
-vim.opt.fileformats={ "unix", "dos", "mac" }
+-- vim.opt.fileformats = { "unix", "dos", "mac" }
 
 vim.opt.completeopt = { "menu", "menuone", "preview" }

@@ -1,1 +1,1 @@
--- vim.opt.hidden = false -- バッファが放棄されるとき隠れ状態にしない
+-- vim.opt.hidden = true -- バッファが放棄されるとき隠れ状態にしない
